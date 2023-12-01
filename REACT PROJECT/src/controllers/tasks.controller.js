@@ -2,7 +2,7 @@ import Product from '../models/product.model.js'
 
 export const getProducts = async (req, res) => {
     const products = await Product.find({
-        user: req.user.id  
+        user: req.user.id
     }).populate('user')
     res.json(products)
 }
@@ -28,8 +28,8 @@ export const getProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
     const product = await Product.findByIdAndDelete(req.params.id);
     if (!product) return res.status(404).json({ message: "Product not found" });
-    return res.sendStatus(204);  
-} 
+    return res.sendStatus(204);
+}
 
 export const updateProduct = async (req, res) => {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
@@ -39,4 +39,3 @@ export const updateProduct = async (req, res) => {
     res.json(product);
 }
 
- 
