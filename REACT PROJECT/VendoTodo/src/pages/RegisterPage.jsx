@@ -27,6 +27,9 @@ function RegisterPage() {
                         </div>
                     ))
                 }
+
+                <div className="text-2xl font-bold text-center">REGISTER</div>
+
                 <form onSubmit={onSubmit}>
                     <input type="text" {...register('username', { required: true })}
                         className="w-full bg-transparent text-black border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='username' />

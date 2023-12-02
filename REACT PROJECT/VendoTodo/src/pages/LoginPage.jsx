@@ -1,13 +1,20 @@
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../context/AuthContext';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
 
 function LoginPage() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { signin, errors: signinErrors } = useAuth();
+    const { signin, errors: signinErrors, isAuthenticated } = useAuth();
+    const navigate = useNavigate( ) 
+
     const onSubmit = handleSubmit((data) => {
         signin(data)
     })
+
+    useEffect(() => {
+        if (isAuthenticated) navigate("/products");
+    }, [isAuthenticated])
 
     return (
         <div className="flex h-[calc(100vh-100px)] items-center justify-center">
@@ -20,7 +27,7 @@ function LoginPage() {
                 ))
             }
 
-                <div className="text-2xl font-bold">LOGIN</div>
+                <div className="text-2xl font-bold text-center">LOGIN</div>
 
                 <form onSubmit={onSubmit}>
                     <input type="email" {...register('email', { required: true })}
