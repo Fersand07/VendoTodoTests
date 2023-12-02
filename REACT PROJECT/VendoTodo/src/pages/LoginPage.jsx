@@ -24,11 +24,11 @@ function LoginPage() {
 
                 <form onSubmit={onSubmit}>
                     <input type="email" {...register('email', { required: true })}
-                        className="w-full bg-transparent text-white border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='email' />
+                        className="w-full bg-transparent text-black border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='email' />
                     {errors.email && <p className='text-red-500'>Email is required</p>}
 
                     <input type="password" {...register('password', { required: true })}
-                        className="w-full bg-transparent text-white border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='password' />
+                        className="w-full bg-transparent text-black border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='password' />
                     {errors.password && <p className='text-red-500'>Password is required</p>}
 
                     <button type='submit'>
