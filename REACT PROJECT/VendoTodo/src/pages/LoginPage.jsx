@@ -38,7 +38,7 @@ function LoginPage() {
                         className="w-full bg-transparent text-black border-2 border-blue-950 px-4 py-2 rounded-md my-2" placeholder='password' />
                     {errors.password && <p className='text-red-500'>Password is required</p>}
 
-                    <button type='submit'>
+                    <button className="bg-indigo-500 px-3 py-2 rounded-md" type='submit'>
                         Login
                     </button>
                 </form>

@@ -54,7 +54,7 @@ function ProductFormPage() {
                         {...register("description")}
                         className="w-full bg-transparent border-2 border-blue-950 text-black px-4 py-2 rounded-md my-2"
                     ></textarea>
-                    <button>
+                    <button className="bg-indigo-500 px-3 py-2 rounded-md">
                         Save
                     </button>
                 </form>

@@ -46,7 +46,7 @@ function RegisterPage() {
 
 
 
-                    <button type='submit'>
+                    <button className="bg-indigo-500 px-3 py-2 rounded-md" type='submit'>
                         Register
                     </button>
                 </form>
